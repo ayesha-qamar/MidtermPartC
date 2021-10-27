@@ -5,6 +5,8 @@
  */
 package midtermexam_versiona_extensioncode;
 
+import java.util.Arrays;
+
 /**
  * The user profile for the OnlineVids system. The user has a userID
  * and a favourite genre that must be one of the choices in the
@@ -19,6 +21,11 @@ public class UserProfile
     private String userID;//the userID
     private String genre;// the user's preferred genre of movie
     private String[] genres = {"Comedy", "Drama", "Action", "Mystery"};//available genres of movies
+    private boolean validGenre = false;
+
+    //empty constructor
+    public UserProfile() {
+    }
     
     /**
      * A constructor that takes in the userID and the favourite genre
@@ -61,7 +68,32 @@ public class UserProfile
         this.genre = genre;
     }
     
+    //Shows the available genres to the user
+    public String showGenres(){
+        return Arrays.toString(genres);
+    }
     
+    public boolean isValidGenre(String genre){
+        switch(genre.toUpperCase()){
+            case "COMEDY":
+                this.validGenre =true;
+                break;
+            case "DRAMA":
+                  this.validGenre =true;
+                break;
+            case "ACTION":
+                  this.validGenre =true;
+                break;
+                case "MYSTERY":
+                  this.validGenre =true;
+                break;
+            default:
+                  this.validGenre =false;
+                System.out.println("Please select genre from the given list");
+        }
+        
+        return this.validGenre;
+    }
     
     
     
