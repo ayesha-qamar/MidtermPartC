@@ -14,6 +14,7 @@ import java.util.Scanner;
 public class TestUserProfile {
      public static void main(String[] args) {
          //added comment to show commit
+         //commit 2
     Scanner sc = new Scanner(System.in);
     String userID;
     String genre;
